@@ -16,8 +16,12 @@ var User = new Schema({
         ref: 'Account'}],
 	followers: [{type: mongoose.Schema.Types.ObjectId,
         ref: 'Account'}],
-	resetPasswordToken: String,
-  	resetPasswordExpires: Date,
+    colors: [{
+    	type: mongoose.Schema.Types.ObjectId,
+	ref: 'Colors' 
+    }],    
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
     activateAccountToken: String,
     activateAccountExpires: Date,
     accountActivated: {type: Boolean, required: true, default: false},
