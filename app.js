@@ -11,8 +11,6 @@ var methodOverride = require('method-override');
 var hbs = require('hbs');
 var routes = require('./routes/users');
 var images = require('./routes/images');
-var organizations = require('./routes/organizations');
-var goals = require('./routes/goals');
 var flash = require('express-flash');
 var configAuth = require('./config/auth');
 var mongo_express = require('mongo-express/lib/middleware');
@@ -53,8 +51,6 @@ app.use('/mongo_express', mongo_express(mongo_express_config));
 
 app.use('/', routes);
 app.use('/api', images);
-app.use('/api',organizations);
-app.use('/api',goals);
 //adds local, facebook,
 //adds local, facebook,
 require('./config/passport')(passport);
