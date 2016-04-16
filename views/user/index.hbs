@@ -1,0 +1,29 @@
+<div class="container">
+  {{#if expressFlash}}
+    <p><strong>{{ expressFlash }}</strong></p>
+  {{/if}}
+{{#unless user}}
+  <a href="/login">Login</a>
+  <br>
+  <a href="/register">Register</a>
+{{/unless}}
+{{#if user}}
+  <img src="/images/{{user.image}}" height="160" width="160">
+  <h4 style="display: inline-block;">
+    <span>you are currently logged in as {{user.username}} </span>
+  </h4>
+  <a href="/edit">Edit Profile</a>
+  <a href="/editPass">Edit Password</a>
+  <a href="/logout">Logout</a>
+  {{>connections}}
+  <hr>
+  <a href="/groups/new">Create an new Group</a>
+  <br>
+  <h6>Groups:</h6>
+  {{#groups}}
+    <a href="/groups/{{_id}}">{{name}}</a>
+    <br>
+  {{/groups}}
+  
+{{/if}}
+</div>
